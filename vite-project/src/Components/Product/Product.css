@@ -1,0 +1,128 @@
+.homeHeading {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1.4vmax;
+    border-bottom: 1.5px solid rgba(21, 21, 21, 0.5);
+    width: 20vmax;
+    padding: 1vmax;
+    margin: 1vmax auto;
+    color: rgb(0, 0, 0, 0.7);
+}
+
+.mainContainerProduct {
+    background-color: #f1eaea75;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Productcontainer {
+    display: flex;
+    margin: 1vmax;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.filterContainer {
+    margin: 1vmax 0 0 2vmax;
+    width: 15%;
+    position: relative;
+    color: #0b0534;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.filterText {
+    padding: 10px 20px;
+    margin: 0 auto;
+    color: white;
+    background-color: rgb(54, 141, 211);
+    word-wrap: break-word;
+    cursor: pointer;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+}
+
+.filterText-1 {
+    padding: 10px 6vh;
+    /* margin: 0 auto; */
+    color: white;
+    background-color: rgb(54, 141, 211);
+    word-wrap: break-word;
+    cursor: pointer;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+}
+
+.priceSlider,
+.ratingSlider {
+    border: 3px solid rgba(2, 2, 45, 0.358);
+    margin-top: 2vh;
+    background-color: rgb(199, 222, 242);
+}
+
+.ratingSlider {
+    margin-bottom: 20px;
+}
+
+.pagination {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+.categoryBox {
+    padding: 0%;
+}
+
+.category-link {
+    list-style: none;
+    border: 1px solid rgba(2, 2, 45, 0.304);
+    font: 400 1vmax "Roboto";
+    padding: 5px;
+    background-color: rgb(199, 222, 242);
+    margin: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-link:hover {
+    transform: translateX(-5px);
+    transition: all 0.3s;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .filterBox {
+        width: 20vmax;
+        position: static;
+        margin: auto;
+    }
+
+
+
+}
+
+@media screen and (max-width: 1050px) {
+    .filterContainer {
+        top: 0;
+        width: 30vmax;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    /* .container{
+        padding-left: 0px;
+    } */
+}

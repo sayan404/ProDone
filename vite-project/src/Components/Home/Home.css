@@ -1,0 +1,72 @@
+.bannerMain {
+  height: 90vh;
+  background:
+    radial-gradient(transparent, rgba(0, 0, 0, 0.692));
+  background-size: cover;
+  background-color: #5454d2cf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 60px solid #fffb00; */
+  text-align: center;
+}
+
+.restOfSec {
+  position: absolute;
+}
+
+.sliderImagesSection {
+  height: 25vmin;
+  width: 100%;
+}
+
+.restOfSec>div>button {
+  cursor: pointer;
+  background-color: white;
+  opacity: 0.7;
+  border: 1px solid white;
+  border-radius: 0;
+  margin-top: 10px;
+  transition: all 0.5s;
+  width: 9vmax;
+  height: 6vmax;
+  font: 500 1vmax "Roboto";
+}
+
+.restOfSec>div>button:hover {
+  background-color: rgba(235, 131, 131, 0.74);
+  color: white;
+}
+
+.scrool {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heading>p {
+  position: relative;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.541);
+  font: 900 2.3vmax "Roboto";
+  letter-spacing: 2px;
+}
+
+.restOfSec>h1 {
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.541);
+  font: 400 1.6vmax "Roboto";
+  letter-spacing: 2px;
+}
+
+.sliderArea {
+  position: relative;
+}

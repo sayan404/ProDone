@@ -1,0 +1,30 @@
+
+  .searchBox > input[type="text"] {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+    background-color: white;
+    border: none;
+    color: rgba(0, 0, 0, 0.637);
+    padding: 1vmax 2vmax;
+    width: 70%;
+    outline: none;
+    border-radius: none;
+    font: 300 1.1vmax cursive;
+    box-sizing: border-box;
+    height: 8%;
+}
+
+.searchBox > input[type="submit"] {
+    height: 8%;
+    border-radius: 0%;
+    background-color: tomato;
+    border: none;
+    padding: 1vmax 2vmax;
+    border: none;
+    width: 30%;
+    font: 300 1.1vmax cursive;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+  }
+  
+  
