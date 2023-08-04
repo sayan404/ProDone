@@ -18,20 +18,21 @@ const Profile = () => {
         <>
             {loading ? (
                 <Loader />
-            ) : (
+            ) : (user ?
                 <>
                     <MetaData title={`${user.name}'s Profile`} />
                     <div className="mainProfileContainer">
+                        <div className="clipPathProfile"></div>
                         <div className="profileContainer">
                             <div className="leftProfile">
                                 {user.avatar.url ? <>
                                     <img src={user.avatar.url} alt={user.name} />
                                     <Link to="/me/update">EDIT PROFILE</Link>
                                 </> : <>
-                                <img src={picReplace} alt="fake-pic" />
-                                <Link to="/me/update">EDIT PROFILE</Link>
-                                </>  
-                            }
+                                    <img src={picReplace} alt="fake-pic" />
+                                    <Link to="/me/update">EDIT PROFILE</Link>
+                                </>
+                                }
                             </div>
                             <div className="rightProfile">
                                 <div>
@@ -54,7 +55,7 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                </>
+                </> : <></>
             )}
         </>
     );

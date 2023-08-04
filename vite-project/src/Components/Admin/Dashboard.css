@@ -1,0 +1,134 @@
+.dashboard {
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    position: relative;
+    margin: 1rem;
+    
+}
+
+.sideBarFromDashboard {
+    min-height: 100vh;
+    margin: 5vmax;
+
+}
+
+.dashboardContainer {
+    border-left: 1px solid rgba(0, 0, 0, 0.13);
+    background-color:#F9FAFB;
+    padding: 3rem 0;
+    position: relative;
+    backdrop-filter: blur(50px);
+    z-index: 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+/* .dashboardContainer > div {
+    color: rgba(0, 0, 0, 0.733);
+    font: 300 2rem "Roboto";
+    text-align: center;
+    width: 50%;
+    padding: 1.5rem;
+    margin: auto;
+} */
+
+.dashboardSummary {
+    margin: 2rem 0;
+}
+
+.dashtext {
+    margin: 0 50%;
+    /* background-color: antiquewhite; */
+    font: 400 4vh roboto;
+    color: rgba(0, 0, 0, 0.543);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.29);
+    font: 300 2rem "Roboto";
+    text-align: center;
+    width: 50%;
+    padding: 1.5rem;
+    margin: auto;
+}
+
+.dashboardSummary>div {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboardSummary>div>p {
+    background-color: rgba(70, 117, 218, 0.932);
+    color: white;
+    font: 300 1.3rem "Roboto";
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.dashboardSummaryBox2>a {
+    color: #7A4F01;
+    font: 300 2vmax "Roboto";
+    text-align: center;
+    background-color: #FFF7CD;
+    text-decoration: none;
+    padding: 1rem;
+    width: 15vmax;
+    height: 15vmax;
+    margin: 2vmax 1vmax;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashboardSummaryBox2>a:first-child {
+   
+    background-color: #FFE7D9;
+    color: #7A4F01;
+}
+
+.dashboardSummaryBox2>a:last-child {
+    background-color: #D1E9FC;
+    color: #061B64;
+}
+
+.lineChart {
+    width: 70vw;
+    height: 50vh;
+}
+
+.doughnutChart {
+    width: 100%;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardContainer {
+        border-left: none;
+    }
+
+    .dashboardSummary>div>p {
+        margin: 0;
+    }
+    .dashboardSummaryBox2 > a{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .dashboardSummaryBox2>a {
+        width: 10vw;
+        /* padding: 0.5rem; */
+        /* margin: 1rem; */
+        font: 300 0.9rem "Roboto";
+    }
+    /* .lineChart {
+        width: 50%;
+        margin: auto;
+    } */
+}

@@ -31,7 +31,7 @@ const UserOptions = () => {
         { icon: <VpnKeyIcon />, name: 'Login/Register', func: loginUser },
         { icon: <HomeIcon />, name: 'Home', func: home },
         { icon: <LocalMallIcon />, name: 'Products', func: products },
-        { icon: <CallIcon />, name: 'Products', func: contactUs },
+        { icon: <CallIcon />, name: 'Contact', func: contactUs },
         { icon: <ListAltIcon />, name: 'Orders', func: orders },
         { icon: <EmojiEmotionsIcon />, name: 'Profile', func: account },
         { icon: <ShoppingCartIcon style={{ color: cartItems.length > 0 ? "skyblue" : "unset" }} />, name: `Cart(${cartItems.length})`, func: cart },
@@ -40,14 +40,15 @@ const UserOptions = () => {
     ]
     
     if (isAuthenticated && user.role === "admin") {
-        actionsForLoogedInUsers.unshift({       // unshift inserts elements at the starting of the array
+        actionsForLoogedInUsers.push({       // unshift inserts elements at the starting of the array
             icon: <DashboardIcon />,
             name: "Dashboard",
             func: dashboard,
         })
+        console.log("1");
     }
     function dashboard() {
-        navigate('/dashboard')
+        navigate('/admin/dashboard')
     }
     function orders() {
         navigate('/orders')

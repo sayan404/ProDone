@@ -1,12 +1,12 @@
 const catchAsyncError = require('../middleware/catchAsyncError')
 const Product = require('../models/productModel')
 const ErrorHandler = require("../utils/errorHandler")
-
+const cloudinary = require('cloudinary')
 
 // GET all products
 
-exports.getAllProducts = catchAsyncError(async (req, res , next) => {
-    const { category, keyword, price, page , ratings } = req.query
+exports.getAllProducts = catchAsyncError(async (req, res, next) => {
+    const { category, keyword, price, page, ratings } = req.query
     const queryObject = {}
     let products
     products = await Product.find(queryObject)
@@ -18,14 +18,14 @@ exports.getAllProducts = catchAsyncError(async (req, res , next) => {
         queryObject.name = { $regex: keyword, $options: "i" }
     }
     if (price) {
-        queryObject.price = { $gte: price.gte , $lte: price.lte }
+        queryObject.price = { $gte: price.gte, $lte: price.lte }
     }
     if (ratings) {
         queryObject.ratings = { $gte: ratings.gte }
     }
     const resultPerPage = 8
     let pageCount = Number(req.query.page) || 1
-    let skipObjects = (pageCount - 1) * resultPerPage  
+    let skipObjects = (pageCount - 1) * resultPerPage
     if (page) {
         products = await Product.find(queryObject).skip(skipObjects).limit(resultPerPage)
     }
@@ -42,17 +42,50 @@ exports.getAllProducts = catchAsyncError(async (req, res , next) => {
 })
 
 
-// Create Product --admin
-
-exports.createProduct = catchAsyncError(async (req, res, next) => {
-    req.body.user = req.user.id
-    const product = await Product.create(req.body)
-    res.status(201).json({
+exports.getAllProductsAdmin = catchAsyncError(async (req, res, next) => {
+    const products = await Product.find()
+    res.status(200).json({
         success: true,
-        product
+        productsCountAfterAllFilters: products.length,
+        products
     })
 })
 
+
+// Create Product --admin
+
+exports.createProduct = catchAsyncError(async (req, res, next) => {
+    let images = [];
+
+    if (typeof req.body.images === "string") {
+        images.push(req.body.images);
+    } else {
+        images = req.body.images;
+    }
+
+    const imagesLinks = [];
+
+    for (let i = 0; i < images.length; i++) {
+        const result = await cloudinary.v2.uploader.upload(images[i], {
+            folder: "products",
+        });
+
+        imagesLinks.push({
+            public_id: result.public_id,
+            url: result.secure_url,
+        });
+    }
+
+    req.body.images = imagesLinks;
+    req.body.user = req.user.id;
+
+    const product = await Product.create(req.body);
+
+    res.status(201).json({
+        success: true,
+        product,
+    });
+});
 
 // Get single Product Details
 
@@ -84,6 +117,38 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
             message: 'Product not Found'
         })
     }
+
+    // Images Start Here
+    let images = [];
+
+    if (typeof req.body.images === "string") {
+        images.push(req.body.images);
+    } else {
+        images = req.body.images;
+    }
+
+    if (images !== undefined) {
+        // Deleting Images From Cloudinary
+        for (let i = 0; i < product.images.length; i++) {
+            await cloudinary.v2.uploader.destroy(product.images[i].public_id);
+        }
+
+        const imagesLinks = [];
+
+        for (let i = 0; i < images.length; i++) {
+            const result = await cloudinary.v2.uploader.upload(images[i], {
+                folder: "products",
+            });
+
+            imagesLinks.push({
+                public_id: result.public_id,
+                url: result.secure_url,
+            });
+        }
+
+        req.body.images = imagesLinks;
+    }
+
     product = await Product.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true,
@@ -105,6 +170,13 @@ exports.deleteProduct = catchAsyncError(async (req, res, next) => {
             message: 'Product not Found'
         })
     }
+    // Deleting Images From Cloudinary
+    for (let i = 0; i < product.images.length; i++) {
+        await cloudinary.v2.uploader.destroy(product.images[i].public_id);
+    }
+
+    await product.remove();
+
     await Product.findOneAndDelete(req.params.id)
     res.status(200).json({
         success: true,

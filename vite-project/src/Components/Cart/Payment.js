@@ -17,7 +17,7 @@ import EventIcon from '@mui/icons-material/Event'
 import VpnKeyIcon from '@mui/icons-material/VpnKey'
 
 import { useNavigate } from "react-router-dom"
-import { createOrder , clearErrors } from "../../Actions/oederAction"
+import { createOrder , clearErrors } from "../../Actions/orederAction"
 const Payment = () => {
 
   // const [clientSecret, setClientSecret] = useState("")

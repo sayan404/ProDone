@@ -31,7 +31,7 @@ const Product = () => {
     const dispatch = useDispatch()
     const params = useParams()
     const keyword = params.keyword
-    const { error, products, resultPerPage, totalNoOfProducts } = useSelector(state => state.products) // to access the data from redux dev tool
+    const { error, products, resultPerPage, totalNoOfProducts } = useSelector(state => state.product) // to access the data from redux dev tool
     // productsCountAfterAllFilters
     const setCurrentPageNo = (e, val) => {
         e.preventDefault()

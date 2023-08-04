@@ -6,26 +6,33 @@
   background-color: rgb(153, 213, 243);
   position: fixed;
 }
-
+.clipPathProfile{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  -webkit-clip-path: circle(50% at 50% 20%);
+  clip-path: circle(70% at 100% 20%);
+  background-color: rgb(118, 118, 185);
+}
 .profileContainer {
   height: 70%;
   width: 80%;
   margin: 10vh;
-  background-color: rgba(255, 255, 255, 0.897);
+  background-color: rgba(255, 255, 255, 1);
   max-width: 100%;
   padding: 6vmax;
   box-sizing: border-box;
   display: flex;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.781);
+  box-shadow: rgba(19, 105,190 ,0.87) 0px 6px 20px;
   transition: transform 0.5s ease;
   border-radius: 10px;
-  border: 5px solid rgba(6, 41, 76, 0.772);
+  border: 5px solid rgba(19, 105, 190, 0.772);
+  z-index: 2;
 }
 
 .profileContainer:hover {
   transform: translateY(-10px);
   transition: transform 0.5s ease;
-  background-color: rgb(255, 255, 255);
 }
 
 
@@ -57,7 +64,8 @@
   width: 20vmax;
   border-radius:100%;
   transition: all 0.5s;
-  border: 3px solid rgba(6, 41, 76, 0.772);
+  /* border: 3px solid rgba(6, 41, 76, 0.772); */
+  box-shadow: rgba(4, 17, 157, 0.87) 0px 5px 15px;
 }
 
 .leftProfile>img:hover {
@@ -76,11 +84,13 @@
   text-align: center;
   transition: all 0.5s;
   border-radius: 5px;
-  border: 3px solid rgba(6, 41, 76, 0.772);
+  border: 2px solid #04119d90;
+  box-shadow: #04119dde 0px 2px 5px;
 }
 
 .leftProfile>a:hover {
   background-color: #577ebc;
+  border: 2px solid #0f0656;
 }
 
 .profileContainer>div:last-child {
@@ -119,12 +129,14 @@
   text-align: center;
   transition: all 0.5s;
   margin: 1vmax 0;
-  border: 3px solid rgba(6, 41, 76, 0.772);
+  border: 2px solid #04119d90;
+  box-shadow: #04119dde 0px 2px 5px;
   border-radius: 5px;
 }
 
 .profileContainer>div:last-child>div:last-child>a:hover {
   background-color: #577ebc;
+  border: 2px solid #0f0656;
 }
 
 @media screen and (max-width: 800px) {

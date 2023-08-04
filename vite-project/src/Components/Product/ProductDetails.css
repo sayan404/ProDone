@@ -196,17 +196,19 @@
 .reviews {
     display: flex;
     overflow: auto;
+    /* background-color: red; */
+    margin: 1vmax 3vmax;
 }
 
 .reviewCard {
     flex: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.409);
     border: 1px solid rgba(56, 56, 56, 0.116);
-    width: 30vmax;
+    width: 10vmax;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3vmax;
+    margin: 3vmax 1vmax;
     padding: 3vmax;
     transition: transform 0.5s ease;
 }
