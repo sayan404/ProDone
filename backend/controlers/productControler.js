@@ -9,6 +9,7 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
     const { category, keyword, price, page, ratings } = req.query
     const queryObject = {}
     let products
+    console.log(req.query);
     products = await Product.find(queryObject)
     const totalNoOfProducts = products.length
     if (category) {

@@ -7,6 +7,7 @@ const crypto = require("crypto");
 const cloudinary = require('cloudinary')
 
 //--Register a User
+
 exports.registerUser = catchAsyncError(async (req, res, next) => {
   const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
     folder: "avatars",
@@ -79,9 +80,9 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   // Get ResetPassword Token
   const resetToken = user.getResetPasswordToken();
   await user.save();
-  const resetPasswordUrl = `http://localhost:3000/password/reset/${resetToken}`;
-  const message = `Your Password token is        :- \n\n ${resetPasswordUrl} \n\n If you have not requested this mail please igonre`;
-  // ${req.protocol}://${req.get("host")}//api/v1/
+  const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`;
+  const message = `Your Password token is :- \n\n ${resetPasswordUrl} \n\n If you have not requested this mail please igonre`;
+  // const resetPasswordUrl = `http://localhost:3000/password/reset/${resetToken}`;
   try {
     sendEmail({
       email: user.email,

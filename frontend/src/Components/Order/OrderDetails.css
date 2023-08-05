@@ -2,17 +2,19 @@
     background-color: white;
   }
   
-  .orderDetailsContainer > h1 {
-    font: 300 3vmax "Roboto";
-    margin: 4vmax 0;
-    color: tomato;
-  }
-  
   .orderDetailsContainer {
-    padding: 5vmax;
+    padding: 0.6vmax 5vmax;
     padding-bottom: 0%;
   }
-  
+  .orderDetailsContainer > div{
+    font: 300 1.5vmax "Roboto";
+    margin: 2vmax 0;
+    color: rgb(5, 20, 79);
+  }
+  .oderHeaderText{
+    font: 300 2.5vmax "Roboto";
+    color: rgb(21, 47, 151);
+  }
   .orderDetailsContainer > p {
     font: 400 1.8vmax "Roboto";
   }
@@ -24,12 +26,12 @@
   
   .orderDetailsContainerBox > div {
     display: flex;
-    margin: 1vmax 0;
+    margin: 0.5vmax 0;
   }
   
   .orderDetailsContainerBox > div > p {
-    font: 400 1vmax "Roboto";
-    color: black;
+    font: 600 1vmax "Roboto";
+    letter-spacing: 1px;
   }
   .orderDetailsContainerBox > div > span {
     margin: 0 1vmax;
@@ -65,8 +67,8 @@
   }
   
   .orderDetailsCartItemsContainer > div > span {
-    font: 100 1vmax "Roboto";
-    color: #5e5e5e;
+    font: 300 1vmax "Roboto";
+    color: #3e3434;
   }
   
   @media screen and (max-width: 600px) {

@@ -11,7 +11,7 @@
 
 .emptyCart>svg {
     font-size: 5vmax;
-    color: tomato;
+    color:  rgba(15, 47, 151, 0.527);
 }
 
 .emptyCart>p {
@@ -33,7 +33,7 @@
 }
 
 .cartHeader {
-    background-color: tomato;
+    background-color: #4848E4;
     width: 90%;
     box-sizing: border-box;
     margin: auto;
@@ -62,6 +62,7 @@
     display: flex;
     align-items: center;
     height: 8vmax;
+    /* justify-content: space-evenly; */
 }
 
 .cartInput>button {
@@ -76,15 +77,17 @@
 .cartInput>button:hover {
     background-color: rgba(0, 0, 0, 0.767);
 }
-
-.cartInput>input {
+.cartInput>div{
+    width: 3vmax;
+}
+.cartInput>div>input {
     border: none;
-    padding: 0.5vmax;
-    width: 1vmax;
-    text-align: center;
+    height: 4vmax;
     outline: none;
-    font: 400 0.8vmax "Roboto";
-    color: rgba(0, 0, 0, 0.74);
+    font: 600 0.8vmax "Roboto";
+    color: rgba(0, 0, 0, 0.945);
+    z-index: inherit;
+    padding-left: 10px;
 }
 
 .cartSubtotal {
@@ -95,7 +98,7 @@
     box-sizing: border-box;
     font: 300 1vmax cursive;
     justify-content: flex-end;
-    color: rgba(0, 0, 0, 0.753);
+    color: rgba(0, 0, 0, 0.507);
 }
 
 .cartGrossProfit {
@@ -104,7 +107,7 @@
 }
 
 .cartGrossProfitBox {
-    border-top: 3px solid tomato;
+    border-top: 3px solid  rgba(15, 47, 151, 0.527);
     margin: 1vmax 4vmax;
     box-sizing: border-box;
     padding: 2vmax 0;
@@ -119,17 +122,22 @@
 }
 
 .checkOutBtn>button {
-    background-color: tomato;
+    background-color:  #2424b4d5;
     color: white;
     border: none;
-    padding: 0.8vmax 4vmax;
-    width: 50%;
-    font: 300 0.8vmax "Roboto";
+    padding: 0.8vmax 1vmax;
+    width: 30%;
+    letter-spacing: 1px;
+    font: 600 0.8vmax "Roboto";
     margin: 1vmax 4vmax;
     cursor: pointer;
-    border-radius: 30px;
+    transition: all 0.5s ease;
 }
 
+.checkOutBtn>button:hover {
+    background-color:  #121289;
+    transition: all 0.5s ease;
+}
 @media screen and (max-width: 600px) {
     .cartPage {
         padding: 0;
