@@ -35,8 +35,7 @@ export const getProduct = (keyword = "", currentPage = 1, price = [0, 50000], ca
         dispatch({
             type: ALL_PRODUCT_REQUEST,
         })
-        let link = `http://localhost:8080/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
-        // http://127.0.0.1:5173/products
+        let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
         console.log(link);
         if (category) {
             link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`
