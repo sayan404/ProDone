@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({ limit : "50mb" , extended: true }))
 app.use(fileUpload())
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send("Server Is Working Fine")
-});
+// app.get('/', (req, res) => {
+//     res.send("Server Is Working Fine")
+// });
 
 // Route imports 
 const product = require('./routes/productRoute')
