@@ -17,8 +17,16 @@ const ProtectedRoute = ({ isAdmin }) => {
        return navigate("/login");
         // return null;
     }
+    if (!user) {
+         navigate("/login");
+        // return null;
+    }
 
-    if (isAdmin && user.role !== 'admin') {
+    if (isAdmin && user && user.role !== 'admin') {
+         navigate("/login");
+        // return null;
+    }
+    if (isAdmin && !user) {
          navigate("/login");
         // return null;
     }
