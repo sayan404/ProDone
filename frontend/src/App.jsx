@@ -9,8 +9,6 @@ import { Route, Routes } from 'react-router-dom'
 import Product from './Components/Product/Product'
 import ProductDetails from './Components/Product/ProductDetails'
 import LoginSignUp from './Components/User/LoginSignup'
-import store from './Store'
-import { loadUser } from './Actions/userAction'
 import UserOptions from './Components/Layout/Header/UserOptions'
 import ProtectedRoute from './Components/Route/ProtectedRoute'
 import Profile from './Components/User/Profile'
@@ -26,7 +24,6 @@ import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import MyOrders from './Components/Order/MyOrders'
 import OrderDetails from './Components/Order/OrderDetails'
-// E:\codes\Prodone\frontend\src\Order\OrderDetails.jsx
 import Dashboard from './Components/Admin/Dashboard'
 import ProductList from './Components/Admin/ProductList'
 import NewProduct from './Components/Admin/NewProduct'
@@ -37,29 +34,30 @@ import UserList from './Components/Admin/UserList'
 import UpdateUser from './Components/Admin/UpdateUser'
 import ProductReviews from './Components/Admin/ProductReviews'
 import OrderSuccess from './Components/Cart/OrderScuccess'
-
+import { loadUser } from './Actions/userAction'
+import { useDispatch } from 'react-redux'
 function App() {
   // const { isAuthenticated, user } = useSelector((state) => state.user)
 
   const [stripeApiKey, setStripeApiKey] = useState("")
-
+  const dispatch = useDispatch()
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey")
-    console.log(data)
+    // console.log(data)
     setStripeApiKey(data.stripeApiKey)
   }
   const stripePromise = loadStripe(stripeApiKey)
 
 
   useEffect(() => {
+    dispatch(loadUser()) // to store the cirrent logged in state of user 
     WebFont.load({
       google: {
         families: ["Roboto", "Droid Sans", "Chilanka"]
       }
     })
     getStripeApiKey()
-    store.dispatch(loadUser()) // to store the cirrent logged in state of user 
-  }, [])
+  }, [dispatch])
   // const { isAuthenticated, user } = useSelector((state) => state.user)
   return (
     <div className='main'>
@@ -94,7 +92,6 @@ function App() {
           <Route path="/password/reset/:token" element={<ResetPassword />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
-
         <Route element={<ProtectedRoute />} >
           <Route path='/process/payment' element={<Elements stripe={stripePromise}><Payment /></Elements>} />
         </Route>
@@ -104,23 +101,33 @@ function App() {
         <Route element={<ProtectedRoute />} >
           <Route path="/order/:id" element={<OrderDetails />} />
         </Route>
-        <Route path="/admin/dashboard" element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
-
-        <Route path="/admin/products" element={<ProtectedRoute isAdmin={true} ><ProductList /></ProtectedRoute>} />
-
-        <Route path="/admin/product" element={<ProtectedRoute isAdmin={true}><NewProduct /></ProtectedRoute>} />
-
-        <Route path="/admin/product/:id" element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
-
-        <Route path="/admin/order/:id" element={<ProtectedRoute isAdmin={true}><ProcessOrder /></ProtectedRoute>} />
-
-        <Route path="/admin/orders" element={<ProtectedRoute isAdmin={true}><OrderList /></ProtectedRoute>} />
-
-        <Route path="/admin/users" element={<ProtectedRoute isAdmin={true}><UserList /></ProtectedRoute>} />
-
-        <Route path="/admin/user/:id" element={<ProtectedRoute isAdmin={true}><UpdateUser /></ProtectedRoute>} />
-
-        <Route path="/admin/reviews" element={<ProtectedRoute isAdmin={true}><ProductReviews /> </ProtectedRoute>} />
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/products" element={<ProductList />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/product" element={<NewProduct />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/product/:id" element={<UpdateProduct />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/order/:id" element={<ProcessOrder />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/orders" element={<OrderList />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/users" element={<UserList />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/user/:id" element={<UpdateUser />} />
+        </Route>
+        <Route element={<ProtectedRoute isAdmin={true} />} >
+          <Route path="/admin/reviews" element={<ProductReviews />} />
+        </Route>
 
       </Routes>
 

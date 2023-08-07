@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import Sidebar from "./Sidebar.js"
+import Sidebar from "./Sidebar"
 import "./Dashboard.css"
 import { Link } from "react-router-dom"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer , PieChart, Pie, Cell } from 'recharts'
@@ -68,7 +68,7 @@ const Dashboard = () => {
       name: 'InStock',
       value: (products.length - outOfStock)
     })
-    console.log(products)
+    // console.log(products)
   }
 
   const COLORS = ['#0088FE', '#FFBB28']
@@ -77,7 +77,7 @@ const Dashboard = () => {
     dispatch(getAdminProduct())
     dispatch(getAllOrders())
     dispatch(getAllUsers())
-    console.log(products)
+    // console.log(products)
   }, [dispatch])
 
   doughnutState()

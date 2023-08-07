@@ -71,7 +71,7 @@ const Product = () => {
                         />
                         </div>
 
-                    </Box> <div className='filterText' >CATEGORIES</div>
+                    </Box> <div className='filterText'>CATEGORIES</div>
                     <ul className="categoryBox">
                         {categories.map((category) => (
                             <li

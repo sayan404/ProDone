@@ -2,14 +2,16 @@ import {
     ADD_TO_CART,
     REMOVE_CART_ITEM,
     SAVE_SHIPPING_INFO,
-  } from "../Constants/CartConstant";
-  import axios from "axios";
-  
+  } from "../Constants/CartConstant"
+  import axios from "axios"
+  // const backLink = "https://prodone.onrender.com"
   // Add to Cart
+
+  
   export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
-    // console.log("data");
-    const { data } = await axios.get(`/api/v1/product/${id}`);
-    // console.log(data);
+    // console.log("data")
+    const { data } = await axios.get(`/api/v1/product/${id}`)
+    // console.log(data)
     dispatch({
       type: ADD_TO_CART,
       payload: {
@@ -20,27 +22,26 @@ import {
         stock: data.product.Stock,
         quantity,
       },
-    });
+    })
   
-    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
-  };
+    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))
+  }
   
   // REMOVE FROM CART
   export const removeItemsFromCart = (id) => async (dispatch, getState) => {
     dispatch({
       type: REMOVE_CART_ITEM,
       payload: id,
-    });
-  
-    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
-  };
-  
+    })
+    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))
+  }
+
   // SAVE SHIPPING INFO
   export const saveShippingInfo = (data) => async (dispatch) => {
     dispatch({
       type: SAVE_SHIPPING_INFO,
       payload: data,
-    });
+    })
   
-    localStorage.setItem("shippingInfo", JSON.stringify(data));
-  };
+    localStorage.setItem("shippingInfo", JSON.stringify(data))
+  }

@@ -11,7 +11,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import { Country, State } from "country-state-city";
 import { useAlert } from "react-alert";
-import CheckoutSteps from "../Cart/CheckoutSteps.js";
+import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useNavigate } from "react-router-dom";
 const ShippingInfo = () => {
     const navigate = useNavigate()

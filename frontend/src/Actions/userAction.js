@@ -37,7 +37,7 @@ import {
   CLEAR_ERRORS,
 } from "../Constants/UserConsent";
 import axios from "axios";
-
+// const backLink = "https://prodone.onrender.com"
 // Login
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -45,12 +45,9 @@ export const login = (email, password) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "application/json" } };
 
-    const { data } = await axios.post(
-      `/api/v1/login`,
-      { email, password },
-      config
-    );
-
+    const { data } = await axios.post(`/api/v1/login`, { email, password }, config);
+    // const { data } = await axios.post(`/api/v1/login`, { email, password },config);
+    console.log(data);
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (error) {
     dispatch({ type: LOGIN_FAIL, payload: error.response.data.error });
@@ -60,43 +57,44 @@ export const login = (email, password) => async (dispatch) => {
 // Register
 export const register = (userData) => async (dispatch) => {
   try {
-    // console.log("ok1");
+    
     dispatch({ type: REGISTER_USER_REQUEST });
-    // console.log("ok2");
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.post(`/api/v1/register`, userData, config);
-    // console.log("ok3");
 
     dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
-    // console.log("ok4");
+    
   } catch (error) {
     dispatch({
       type: REGISTER_USER_FAIL,
       payload: error.response.data.error,
     });
-    // console.log("ok5");
+
   }
 };
 
 // Load User
 export const loadUser = () => async (dispatch) => {
+  console.log("load user called");
   try {
+    console.log("load user called 1");
     dispatch({ type: LOAD_USER_REQUEST });
-
+    console.log("load user called 2");
     const { data } = await axios.get(`/api/v1/me`);
-
+    console.log("load user called 3");
+    console.log(data);
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
     dispatch({ type: LOAD_USER_FAIL, payload: error.response.data.error });
   }
-};
+}
 
 // Logout User
 export const logout = () => async (dispatch) => {
   try {
-    await axios.get(`/api/v1/logout`);
+    await axios.get(`/api/v1/logout`)
     dispatch({ type: LOGOUT_SUCCESS });
   } catch (error) {
     dispatch({ type: LOGOUT_FAIL, payload: error.response.data.error });
@@ -148,7 +146,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 export const forgotPassword = (email) => async (dispatch) => {
   try {
     dispatch({ type: FORGOT_PASSWORD_REQUEST })
-    const config = { headers: { "Content-Type": "application/json" }}
+    const config = { headers: { "Content-Type": "application/json" } }
     const { data } = await axios.post(`/api/v1/password/forgot`, email, config)
     // console.log(data)
     // console.log(data.message)

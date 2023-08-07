@@ -19,7 +19,7 @@ export const Home = () => {
             alert.error(error)
             dispatch(clearErrors())
         }
-    }, [error, alert])
+    }, [error, alert , dispatch])
     const containerStyles = {
         width: "80vw",
         height: "88vh",

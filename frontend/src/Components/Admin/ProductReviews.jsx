@@ -119,6 +119,7 @@ const ProductReviews = () => {
 
     reviews &&
         reviews.forEach((item) => {
+            console.log(item.comment);
             rows.push({
                 id: item._id,
                 rating: item.rating,

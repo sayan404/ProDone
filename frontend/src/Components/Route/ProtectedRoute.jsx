@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 const ProtectedRoute = ({ isAdmin }) => {
     const { loading, isAuthenticated, user } = useSelector((state) => state.user);
-    // console.log(user.role);
+    console.log(user.role);
     const navigate = useNavigate()
 
     if (loading) {
@@ -19,7 +19,6 @@ const ProtectedRoute = ({ isAdmin }) => {
     }
 
     if (isAdmin && user.role !== 'admin') {
-        // If isAdmin is true but the user role is not admin, navigate to the login page.
          navigate("/login");
         // return null;
     }
