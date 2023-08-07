@@ -92,7 +92,7 @@ const UserOptions = () => {
    
 
     return (<>
-        {isAuthenticated ? (<> <Backdrop open={open} style={{ zIndex: "4" }} />
+        {isAuthenticated && user ? (<> <Backdrop open={open} style={{ zIndex: "4" }} />
             <Box sx={{ height: '100%', transform: 'translateZ(0px)', flexGrow: 1 }} className='speedDial'>
                 <SpeedDial
                     ariaLabel="SpeedDial basic example"
