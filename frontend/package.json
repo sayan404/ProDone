@@ -60,5 +60,5 @@
             "last 1 safari version"
         ]
     },
-    "proxy": "http://192.168.45.118:8080"
+    "proxy": "https://pro-done.vercel.app/:10000"
 }
