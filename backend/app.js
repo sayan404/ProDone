@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 const globalErrorHandler = require('./middleware/error')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv').config({path : './dot.env'});
-
+const path = require('path')
 const cors = require('cors'); // Import the 'cors' package
 
 
@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({ limit : "50mb" , extended: true }))
 app.use(fileUpload())
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send("Server Is Working Fine")
-});
+// app.get('/', (req, res) => {
+//     res.send("Server Is Working Fine")
+// });
 // const frontendURL = 'http://localhost:3000'
 // app.use(cors({
 //     origin: frontendURL,
@@ -41,6 +41,16 @@ app.use('/api/v1', order)
 app.use('/api/v1', specialOffer)
 app.use('/api/v1', payment)
 
+
+
+if(process.env.NODE_ENV=='production'){
+   
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
+}
 
 // Error Handling of all wrong routes
 app.all('*', (req, res, next) => {

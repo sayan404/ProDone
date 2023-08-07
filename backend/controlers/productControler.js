@@ -9,7 +9,7 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
     const { category, keyword, price, page, ratings } = req.query
     const queryObject = {}
     let products
-    console.log(req.query);
+    // console.log(req.query);
     products = await Product.find(queryObject)
     const totalNoOfProducts = products.length
     if (category) {
@@ -165,7 +165,7 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
 
 exports.deleteProduct = catchAsyncError(async (req, res, next) => {
     let product = await Product.findById(req.params.id)
-    console.log(product);
+    // console.log(product);
     if (!product) {
         return res.status(500).json({
             success: false,
@@ -180,8 +180,8 @@ exports.deleteProduct = catchAsyncError(async (req, res, next) => {
     await product.remove();
 
     const p = await Product.findOneAndDelete(req.params.id)
-    console.log(req.params.id);
-    console.log(p);
+    // console.log(req.params.id);
+    // console.log(p);
     res.status(200).json({
         success: true,
         message: "Product Deleted Sucessfully"

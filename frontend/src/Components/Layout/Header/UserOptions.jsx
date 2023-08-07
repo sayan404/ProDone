@@ -45,7 +45,7 @@ const UserOptions = () => {
             name: "Dashboard",
             func: dashboard,
         })
-        console.log("1");
+        // console.log("1");
     }
     function dashboard() {
         navigate('/admin/dashboard')

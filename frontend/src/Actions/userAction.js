@@ -77,14 +77,9 @@ export const register = (userData) => async (dispatch) => {
 
 // Load User
 export const loadUser = () => async (dispatch) => {
-  console.log("load user called");
   try {
-    console.log("load user called 1");
     dispatch({ type: LOAD_USER_REQUEST });
-    console.log("load user called 2");
     const { data } = await axios.get(`/api/v1/me`);
-    console.log("load user called 3");
-    console.log(data);
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
     dispatch({ type: LOAD_USER_FAIL, payload: error.response.data.error });

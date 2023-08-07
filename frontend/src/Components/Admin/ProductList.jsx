@@ -29,7 +29,7 @@ const ProductList = () => {
     )
 
     const deleteProductHandler = (id) => {
-        console.log(id);
+        // console.log(id);
         dispatch(deleteProduct(id))
     }
 

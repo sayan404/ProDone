@@ -37,18 +37,18 @@ export const getProduct = (keyword = "", currentPage = 1, price = [0, 50000], ca
         })
         let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
 
-        console.log(link);
+        // console.log(link);
         if (category) {
             link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`
         }
         const { data } = await axios.get(link)
-        console.log(data)
+        // console.log(data)
         dispatch({
             type: ALL_PRODUCT_SUCCESS,
             payload: data,
         })
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         dispatch({
             type: ALL_PRODUCT_FAIL,
             payload: error.response.data.error,
@@ -83,7 +83,7 @@ export const getAdminProduct = () => async (dispatch) => {
         dispatch({ type: ADMIN_PRODUCT_REQUEST })
 
         const { data } = await axios.get(`/api/v1/admin/products`)
-        console.log(data);
+        // console.log(data);
         dispatch({
             type: ADMIN_PRODUCT_SUCCESS,
             payload: data.products,
@@ -156,7 +156,7 @@ export const deleteProduct = (id) => async (dispatch) => {
         dispatch({ type: DELETE_PRODUCT_REQUEST })
 
         const { data } = await axios.delete(`/api/v1/admin/product/${id}`)
-        console.log(data);
+        // console.log(data);
         dispatch({
             type: DELETE_PRODUCT_SUCCESS,
             payload: data.message,
