@@ -39,7 +39,7 @@ const UserOptions = () => {
 
     ]
     
-    if (isAuthenticated && user.role === "admin") {
+    if (isAuthenticated && user && user.role === "admin") {
         actionsForLoogedInUsers.push({       // unshift inserts elements at the starting of the array
             icon: <DashboardIcon />,
             name: "Dashboard",
