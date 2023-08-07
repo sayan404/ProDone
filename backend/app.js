@@ -43,14 +43,14 @@ app.use('/api/v1', payment)
 
 
 
-if(process.env.NODE_ENV=='production'){
+// if(process.env.NODE_ENV=='production'){
    
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
 });
-}
+// }
 
 // Error Handling of all wrong routes
 app.all('*', (req, res, next) => {
