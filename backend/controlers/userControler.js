@@ -33,7 +33,7 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
 
 exports.loginUser = catchAsyncError(async (req, res, next) => {
   const { email, password } = req.body;
-  // console.log(email , password);
+  console.log(email , password);
   // check if user has given password and emaail both or not correctly
 
   if (!email || !password) {
@@ -51,7 +51,7 @@ exports.loginUser = catchAsyncError(async (req, res, next) => {
   }
 
   sendToken(user, 201, res);
-  // console.log('ok');
+  console.log('ok');
   // console.log(sendToken);
 });
 
@@ -133,11 +133,11 @@ exports.resetPassword = catchAsyncError(async (req, res, next) => {
 // Get User Details
 
 exports.getUserDetails = catchAsyncError(async (req, res, next) => {
-  // console.log(req);
-  // console.log(req.user._id);
+  console.log(req);
+  console.log(req.user._id);
   const user = await User.findById(req.user._id)
-  // console.log("sfdgfdgahbhjbjnvknkfv");
-  // console.log(user);
+  console.log("sfdgfdgahbhjbjnvknkfv");
+  console.log(user);
   res.status(200).json({
     success: true,
     user

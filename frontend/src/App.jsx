@@ -43,20 +43,29 @@ function App() {
   const dispatch = useDispatch()
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey")
-    // console.log(data)
+
     setStripeApiKey(data.stripeApiKey)
   }
   const stripePromise = loadStripe(stripeApiKey)
 
 
   useEffect(() => {
-    dispatch(loadUser()) // to store the cirrent logged in state of user 
     WebFont.load({
       google: {
         families: ["Roboto", "Droid Sans", "Chilanka"]
       }
     })
-    getStripeApiKey()
+    // if (isAuthenticated) {
+      dispatch(loadUser()) // to store the cirrent logged in state of user 
+    // }
+    // try {
+      // if (user.role) {
+        // console.log('user = ',user);
+        getStripeApiKey()
+      // }
+    // } catch (er) {
+    //   console.log(er);
+    // }
   }, [dispatch])
   // const { isAuthenticated, user } = useSelector((state) => state.user)
   return (
@@ -69,22 +78,22 @@ function App() {
         <Route exact path='/products' element={<Product />} />
         <Route exact path='/product/:id' element={<ProductDetails />} />
         <Route path='/login' element={<LoginSignUp />} />
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/account' element={<Profile />} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/me/update' element={<UpdateProfile />} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/password/update' element={<UpdatePassword />} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/login/shipping' element={<ShippingInfo />} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/order/confirm' element={<ConfirmOrder />} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path="/success" element={<OrderSuccess />} />
         </Route>
         <Route >
@@ -92,13 +101,13 @@ function App() {
           <Route path="/password/reset/:token" element={<ResetPassword />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/process/payment' element={<Elements stripe={stripePromise}><Payment /></Elements>} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path="/orders" element={<MyOrders />} />
         </Route>
-        <Route element={<ProtectedRoute />} >
+        <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path="/order/:id" element={<OrderDetails />} />
         </Route>
         <Route element={<ProtectedRoute isAdmin={true} />} >

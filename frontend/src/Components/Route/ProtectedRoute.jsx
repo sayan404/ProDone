@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom"
+import Loader from "../Layout/Loader/Loader";
 const ProtectedRoute = ({ isAdmin }) => {
     const { loading, isAuthenticated, user } = useSelector((state) => state.user);
     // console.log(user.role);
@@ -9,7 +10,7 @@ const ProtectedRoute = ({ isAdmin }) => {
 
     if (loading) {
         // Show a loading indicator or placeholder while waiting for the user data.
-        return <div>Loading...</div>;
+        return <Loader />
     }
 
     if (!isAuthenticated) {
@@ -18,16 +19,16 @@ const ProtectedRoute = ({ isAdmin }) => {
         // return null;
     }
     if (!user) {
-         navigate("/login");
+        return  navigate("/login");
         // return null;
     }
 
     if (isAdmin && user && user.role !== 'admin') {
-         navigate("/login");
+        return  navigate("/login");
         // return null;
     }
     if (isAdmin && !user) {
-         navigate("/login");
+        return navigate("/login");
         // return null;
     }
 

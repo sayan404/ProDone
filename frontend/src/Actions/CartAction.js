@@ -15,7 +15,7 @@ import {
     dispatch({
       type: ADD_TO_CART,
       payload: {
-        product: data.product._id,    // in the product reducer the meaning of product will be product id
+        product: data.product._id,// in the product reducer the meaning of product will be product id
         name: data.product.name,
         price: data.product.price,
         image: data.product.images[0].url,
