@@ -125,6 +125,7 @@ export const ImageSlider = ({ slides, parentWidth }) => {
       <div style={dotsContainerStyles}>
         {slides.map((slide, slideIndex) => (
           <div
+          
             style={dotStyle}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
