@@ -2,7 +2,7 @@
 
 const sendToken = (user, statusCode, res) => {
     const token = user.getJWTToken()
-    console.log(token);
+    // console.log(token);
     const options = {
         curentDate : new Date(),
         expires: new Date(

@@ -86,8 +86,8 @@ const OrderList = () => {
             type: "number",
             sortable: false,
             renderCell: (params) => {
-              console.log(params);
-              console.log(params.row);
+            //   console.log(params);
+            //   console.log(params.row);
                 return (
                     <>
                         <Link to={`/admin/order/${params.row.id}`}>
