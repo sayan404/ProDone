@@ -1,5 +1,3 @@
-// sayan23@gmail.com
-// 532147896
 
 import React, { useRef, useState, useEffect } from "react";
 import "./LoginSignup.css";
