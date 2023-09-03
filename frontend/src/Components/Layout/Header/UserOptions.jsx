@@ -70,7 +70,7 @@ const UserOptions = () => {
         { icon: <VpnKeyIcon />, name: 'Login/Register', func: loginUser },
         { icon: <HomeIcon />, name: 'Home', func: home },
         { icon: <LocalMallIcon />, name: 'Products', func: products },
-        { icon: <CallIcon />, name: 'Products', func: contactUs }
+        { icon: <CallIcon />, name: 'Contact', func: contactUs }
         
     ]
     

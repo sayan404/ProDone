@@ -36,6 +36,7 @@ import ProductReviews from './Components/Admin/ProductReviews'
 import OrderSuccess from './Components/Cart/OrderScuccess'
 import { loadUser } from './Actions/userAction'
 import { useDispatch } from 'react-redux'
+import Contact from './Components/Contact/Contact'
 function App() {
   // const { isAuthenticated, user } = useSelector((state) => state.user)
 
@@ -78,6 +79,7 @@ function App() {
         <Route exact path='/products' element={<Product />} />
         <Route exact path='/product/:id' element={<ProductDetails />} />
         <Route path='/login' element={<LoginSignUp />} />
+        <Route path='/contact' element={<Contact />} />
         <Route element={<ProtectedRoute isAdmin={false} />} >
           <Route path='/account' element={<Profile />} />
         </Route>

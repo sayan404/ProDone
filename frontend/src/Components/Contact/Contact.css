@@ -1,0 +1,63 @@
+.leftContact {
+    max-width: 100vmax;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10vh;
+    overflow: hidden !important;
+}
+.leftContact > img{
+    height: 30vw;
+    width: auto;
+}
+
+.formName>input,
+.formName>input,
+.formEmail>input,
+.formSubject>input,
+.formMessage>input {
+    height: 6vh;
+    width: 40vw;
+    font: 300 1.5vh JetBrains Mono;
+    padding-left: 2vh;
+}
+
+.formMessage>input {
+    height: 30vh;
+}
+
+.formName,
+.formEmail,
+.formSubject,
+.formMessage {
+    font: 300 2.5vh JetBrains Mono;
+}
+
+.formName>p,
+.formEmail>p,
+.formSubject>p,
+.formMessage>p {
+    font: 300 2.5vh JetBrains Mono;
+    padding: 2vh 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .leftContact{
+        flex-direction: column;
+        justify-content: center;
+        height: 1500%;
+        width: 100%;
+        margin: 0;
+        overflow: hidden !important;
+    }
+    .leftContact > img{
+        height: 30vh;
+        width: auto;
+        margin-top: 3vh;
+    }
+}
