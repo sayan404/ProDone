@@ -11,13 +11,12 @@ import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import MetaData from '../Layout/MetaData'
 const categories = [
-    "T-Shirt",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
+    "Clothes",
     "Watch",
+    "Footwear",
     "SmartPhones",
+    "Laptops",
+    "Furniture",
     "All"
 ]
 

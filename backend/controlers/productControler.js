@@ -165,7 +165,7 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
 
 exports.deleteProduct = catchAsyncError(async (req, res, next) => {
     let product = await Product.findById(req.params.id)
-    // console.log(product);
+    console.log(product);
     if (!product) {
         return res.status(500).json({
             success: false,
@@ -175,13 +175,12 @@ exports.deleteProduct = catchAsyncError(async (req, res, next) => {
     // Deleting Images From Cloudinary
     for (let i = 0; i < product.images.length; i++) {
         await cloudinary.v2.uploader.destroy(product.images[i].public_id);
+        // await product.remove();
     }
-
-    await product.remove();
-
-    const p = await Product.findOneAndDelete(req.params.id)
-    // console.log(req.params.id);
-    // console.log(p);
+    
+    console.log("working");
+    const prod = await Product.findOneAndDelete(req.params.id)
+    
     res.status(200).json({
         success: true,
         message: "Product Deleted Sucessfully"

@@ -57,7 +57,7 @@ const Contact = () => {
               <Button type='submit' endIcon={<SendIcon />} variant='contained' sx={{ width: '10vw', height: '7vh', padding: ' 2vh 10vh', margin: '2vh auto', font: '2.5vh JetBrains Mono' }}>Submit</Button>
             </div>
           </form>
-          <img src={newsletter} className='imageNewsletter' />
+          <img src={newsletter} alt='imageNewsletter' />
         </div>
       </div>
     </>
