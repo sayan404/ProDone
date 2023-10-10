@@ -33,24 +33,28 @@ export const Home = () => {
 
  const slides = [
         {
-            "url": "https://previews.dropbox.com/p/thumb/ACC6AmKqtYw1tFMEdYRNfr1iX4Fc8Khgz55IXAZN4ItIEJvb5fr-0M4fwpBTAuYwpebCnMVpUzp8b9qP_vdJtPcjhFOcIqDAI2nMmNWqy05QaUtZlTyHiAzYub-X99m3t5NGMCDw3G4z5AUirEXtMteSzBRCxAxVygBLHBlBlgnaLJvOLvcLmnYd-ai2pwT5UD9il5ISpGTctmJA0oEm1ukl-zmhRHCjpP_zvPY6MRXX_VZzTlediYe-mpeDTXPoZlVfXB4c1k0M70qmuvtVACs2NhPqY_7wDmxjajny11xzRpdqGQmVosMOUkiskqxbYlXxZcfBUYIw4pA4AkOVie1I/p.png",
+            "url": "https://res-console.cloudinary.com/ddk2c5zo1/thumbnails/transform/v1/image/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGZfanBnLGZsX2xvc3N5LmFueV9mb3JtYXQucHJlc2VydmVfdHJhbnNwYXJlbmN5LnByb2dyZXNzaXZl/v1/b2ZmZXJzL3V5MXlxY3RneXN3ZzJ2aW5xeXlo/template_primary",
             "title": "Image 1 for carousel"
         },
         {
-            "url": "https://previews.dropbox.com/p/thumb/ACCS31rCI9uXWAVLla_8Dd0G76kI_lKptXKgNAPqYvH5stGKWTuN6_iO3uBBXAISeS7pqi4uRTOWi9aU1gSfF5t2lYgcBW7Shc5Lh3cLlGCY9IcwfMpxXslbe6_MZA7NU91G1Wihsx9sDJ1-w2MgIrAKWYlQiS8beecFJyG9k3SFB3GNa1SEftFZ7Yip3l3gtd672bd6BgYezSk8z2TE4P8IsU_0TBKezZxwy-DhPiSOwdmWUXZ71ISGBzX3ENmyVEHRgIvOD8lAP3BKMrWbqd_pAQLzT-2iYdGc2wwZNC9wuvc4SQjN5I16_ligeobFdINPi5bPzndDwvbiWVqN9_ko/p.png",
+            "url": "https://res-console.cloudinary.com/ddk2c5zo1/thumbnails/transform/v1/image/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGZfanBnLGZsX2xvc3N5LmFueV9mb3JtYXQucHJlc2VydmVfdHJhbnNwYXJlbmN5LnByb2dyZXNzaXZl/v1/b2ZmZXJzL3ljeGNqb3ZjcGluc3JlNDNldGJj/template_primary",
             "title": "Image 2 for carousel"
         },
         {
-            "url": "https://previews.dropbox.com/p/thumb/ACAcjRbDYO0t4-nGadiQRsfjXxhngzH8_2qaXLlkagocOGQQe2PjEiT-SrpKgtXL3T5hYTpsKsHm8_cEU7rRgf6BJhbPyyNJZbDJ2SvgNDZbCKIIStcHmCZXAeZaCM_pCVzkEeLLHmv0qFO-9ge7fyY9NeMNwxBZGZcMKgSiMuCqdtev_mXA5U47lFn2d0rN-YS39A_DiWNT22msUZjrU7ypOl1mEfI9_xm0Gul5-qsWPS_g1tvQttafzugSuLPA2d-U9bGAEORR6UYl1Xm7uh4MhG1_wThb5U4rrVBy94n6pX81V7QM0kgMGUDzVCH8lkT639GvOiHW8RmhLaRMo8Je2pSCpQQsJY7ZQeE7Bg31899s3zUlCRoXSHJEQg7jjunQE9oqTP9_JpR6C8Hgm-iRz7GIKOoD-jbKIb4YwwdRrEuqZPKAl9j9PnG7F5q1b0RT4CEafK9_YBFuNRIEI9H9/p.png",
+            "url": "https://res-console.cloudinary.com/ddk2c5zo1/thumbnails/transform/v1/image/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGZfanBnLGZsX2xvc3N5LmFueV9mb3JtYXQucHJlc2VydmVfdHJhbnNwYXJlbmN5LnByb2dyZXNzaXZl/v1/b2ZmZXJzL3Vhb2VjemZidWtyNXd6em9mMDVs/template_primary",
             "title": "Image 3 for carousel"
         },
         {
-            "url": "https://previews.dropbox.com/p/thumb/ACB7kfUSwFUQYfSHc37r0FUjG8SVyHsOXO4gIFaqLsWXJJgf3apGs1duyZaSBC8T6DHLoX_B2ZU8gKvT2BFzfU2lVGIAYtADJwMf7i78eza-mAqbwmszWqgp67jEjMemTJUmgHKJW_cK_so9fT12FkxH9lTFTIvKQ4ARWZDpHz3LQOfNiQ1Qp2hzWIrE34T2nsxd5mWbpXe0UqXzY0oH2RBJLvKzeRI2snZCRBbKG03ZPxScDH_Zz-F9rbaj4FO0p6554G8NhvCN3Xvz1a38K2CvPvc6cQ4JduI7_29T08x_KOenjCiVXmwQIuoWa3gbywHbIUse9L3xvsj4qDf-zmt5/p.png",
+            "url": "https://res-console.cloudinary.com/ddk2c5zo1/thumbnails/transform/v1/image/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGZfanBnLGZsX2xvc3N5LmFueV9mb3JtYXQucHJlc2VydmVfdHJhbnNwYXJlbmN5LnByb2dyZXNzaXZl/v1/b2ZmZXJzL2hwaHRrY2VqbWkxcWIwc2Y4cWJj/template_primary",
             "title": "Image 4 for carousel"
         },
         {
-            "url": "https://previews.dropbox.com/p/thumb/ACBpcmKBFi0dYhSZ_KZpe3rj6O66tuqpeSSDC3sSIAt1I059Vz-sYWC8nfHU0XjXgjJVl0BMCXhpsqvbQCVbcNFYdwmvPvqYesC_b49yn1yNeYk-CtML9s0rUx48DuR42cOUTi2QNox8YfwoOZz6qmJYZua87JU8_X6KTSCMdE4BlUgCHpLitfMSCiaroRCjL4rVZiG08r_pOK0FNzQEWggwzV7jjO_Oy-skSsmDVw5zOD_PNiStlm_4-Ay4hIZ-wqV5aHQaVVQiNfAkkvI_1MGhPoCm1A64Z43MH57eTwo0tcZMzM-hVSBoScMECNgNmfzwyiF62BGrkGbrk-yISmYy/p.png",
+            "url": "https://res-console.cloudinary.com/ddk2c5zo1/thumbnails/transform/v1/image/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGZfanBnLGZsX2xvc3N5LmFueV9mb3JtYXQucHJlc2VydmVfdHJhbnNwYXJlbmN5LnByb2dyZXNzaXZl/v1/b2ZmZXJzL2xzdHpyejd5MWc5eXRzbmRna3Vi/template_primary",
             "title": "Image 5 for carousel"
+        },
+        {
+            "url": "https://res-console.cloudinary.com/ddk2c5zo1/thumbnails/transform/v1/image/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGZfanBnLGZsX2xvc3N5LmFueV9mb3JtYXQucHJlc2VydmVfdHJhbnNwYXJlbmN5LnByb2dyZXNzaXZl/v1/b2ZmZXJzL2VraHFlaWxyZ2t3Mnl2c2s4d3Vr/template_primary",
+            "title": "Image 6 for carousel"
         }
     ]
     return (
