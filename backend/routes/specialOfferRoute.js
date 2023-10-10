@@ -1,6 +1,6 @@
 const express = require("express")
 
-const { getSpecialOffer, createSpecialOffer, updateSpecialOffer, deleteSpecialOffer } = require("../controlers/")
+const { getSpecialOffer, createSpecialOffer, updateSpecialOffer, deleteSpecialOffer } = require("../controlers/specialOffersControler")
 const { isAuthenticUser, authorizedRoles } = require("../middleware/auth")
 
 const router = express.Router()
